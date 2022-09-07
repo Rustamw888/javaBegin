@@ -1,8 +1,16 @@
-package ru.qamilord.oop;
+package ru.javabegin.oop;
+
 
 public class Main {
 
-  public static void main(String[] args) {
-    System.out.println("Hello world!");
-  }
+    public static void main(String[] args) {
+
+        // можно вызывать элементы как этого класса, так и всех родителей
+        BMW bmw = new BMW();
+        bmw.drive();
+
+        Car car = new Car();
+        car.drive();
+
+    }
 }
