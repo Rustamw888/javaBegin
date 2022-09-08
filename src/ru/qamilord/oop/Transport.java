@@ -16,6 +16,7 @@ public class Transport{ // компилятор всегда как будто �
     private String name;// название, которое будет у всех траспортов
     private String model;// модель
     private String color; // цвет
+    public int year;
 
 
     // get/set для свойств объекта

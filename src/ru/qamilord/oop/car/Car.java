@@ -1,6 +1,7 @@
 package ru.qamilord.oop.car;
 
 import ru.qamilord.oop.Transport;
+import ru.qamilord.oop.Engine;
 
 // все, что умеет транспорт, умеет и Car (доступный функционал)
 // дочерний класс может (но не обязан) добавлять что-то от себя
@@ -22,7 +23,13 @@ public class Car extends Transport {
     public Car() {
     }
 
+    public Car(Engine engine) {
+        this.engine = engine;
+    }
+
     private int number; // для всех авто нужно будет иметь номер
+
+    private Engine engine;
 
     public int getNumber() {
         return number;
@@ -30,6 +37,14 @@ public class Car extends Transport {
 
     public void setNumber(int number) {
         this.number = number;
+    }
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
     }
 
     // уникальный метод только для Car и всех его дочерних классов
@@ -46,5 +61,9 @@ public class Car extends Transport {
     @Override
     public void stop() {
         System.out.println("stop car");
+    }
+
+    public static String formatText(String text){
+        return text + "!!!";
     }
 }
