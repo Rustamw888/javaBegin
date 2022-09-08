@@ -1,4 +1,6 @@
-package ru.qamilord.oop;
+package ru.qamilord.oop.car;
+
+import ru.qamilord.oop.Transport;
 
 // все, что умеет транспорт, умеет и Car (доступный функционал)
 // дочерний класс может (но не обязан) добавлять что-то от себя
@@ -35,11 +37,11 @@ public class Car extends Transport {
         System.out.println("signal");
     }
 
-//    @Override
-//    public void drive() {
-//        // доработанный функционал для метода drive
-//        System.out.println("drive car");
-//    }
+    @Override
+    public void drive() {
+        // доработанный функционал для метода drive
+        System.out.println("drive car");
+    }
 
     @Override
     public void stop() {

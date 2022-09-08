@@ -1,4 +1,4 @@
-package ru.qamilord.oop;
+package ru.qamilord.oop.car;
 
 public class BMW extends Car {
 
