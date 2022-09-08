@@ -1,11 +1,8 @@
 package ru.qamilord.oop;
 
 
-import ru.qamilord.oop.car.BMW;
 import ru.qamilord.oop.car.Car;
 import ru.qamilord.oop.car.Toyota;
-import ru.qamilord.oop.motorbike.Kawasaki;
-import ru.qamilord.oop.motorbike.Ural;
 
 public class Main {
 
