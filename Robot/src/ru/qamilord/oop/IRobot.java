@@ -1,7 +1,7 @@
 package ru.qamilord.oop;
 
 // вы можете во всех интерфейсах описывать как методы-свойства, так методы-свойства
-public interface IRobot {
+public interface IRobot extends ITechnic {
 
     // методы-действия (методы бизнес-процессов)
     void move();

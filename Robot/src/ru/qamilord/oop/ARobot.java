@@ -32,4 +32,15 @@ public abstract class ARobot implements IRobot {
     public void setWing(IWing wing) {
         this.wing = wing;
     }
+
+
+    @Override
+    public void on() {
+
+    }
+
+    @Override
+    public void off() {
+
+    }
 }
