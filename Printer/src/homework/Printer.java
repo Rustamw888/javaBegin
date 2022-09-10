@@ -22,7 +22,8 @@ public class Printer implements IPrinter {
 
   @Override
   public void print(String text) {
-    System.out.println("На печать отправлен текст: " + text + ", длина: " + text.length());
+    System.out.println(String.format(
+        "На печать отправлен текст: %s, длина: %d", text, text.length()));
 
     if (text.length() > paintVolume) {
       int left = text.length() - paintVolume;
@@ -32,17 +33,16 @@ public class Printer implements IPrinter {
       print(text);
       return;
     }
-    paintVolume = paintVolume - text.length();
-    System.out.println(
-        "Текст распечатан: " + text + ", у принтера осталось краски: " + paintVolume);
+    paintVolume -= text.length();
+    System.out.println(String.format(
+        "Текст распечатан: %s, у принтера осталось краски: %d", text, paintVolume));
 
   }
 
   @Override
   public void charge(int charge) {
-    paintVolume = paintVolume + charge;
-    System.out.println(
-        "Принтер пополнен на длину текста " + charge + " (всего краски в принтере: " + paintVolume
-            + ")");
+    this.paintVolume += charge;
+    System.out.println(String.format(
+        "Принтер пополнен на длину текста %d (всего краски в принтере: %d)", charge, paintVolume));
   }
 }
