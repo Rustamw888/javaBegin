@@ -1,7 +1,7 @@
-package ru.qamilord.oop.car;
+package ru.qamilord.oopTransport.car;
 
-import ru.qamilord.oop.Transport;
-import ru.qamilord.oop.Engine;
+import ru.qamilord.oopTransport.Transport;
+import ru.qamilord.oopTransport.Engine;
 
 // все, что умеет транспорт, умеет и Car (доступный функционал)
 // дочерний класс может (но не обязан) добавлять что-то от себя

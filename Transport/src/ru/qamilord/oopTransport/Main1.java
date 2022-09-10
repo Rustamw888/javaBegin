@@ -1,10 +1,10 @@
-package ru.qamilord.oop;
+package ru.qamilord.oopTransport;
 
 
-import ru.qamilord.oop.car.Car;
-import ru.qamilord.oop.car.Toyota;
+import ru.qamilord.oopTransport.car.Car;
+import ru.qamilord.oopTransport.car.Toyota;
 
-public class Main {
+public class Main1 {
 
     public static void main(String[] args) {
 

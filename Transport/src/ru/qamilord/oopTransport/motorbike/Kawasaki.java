@@ -1,4 +1,4 @@
-package ru.qamilord.oop.motorbike;
+package ru.qamilord.oopTransport.motorbike;
 
 public class Kawasaki extends Motorbike{
 

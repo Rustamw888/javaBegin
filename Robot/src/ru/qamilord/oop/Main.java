@@ -1,4 +1,4 @@
-package ru.javabegin.oop.robot;
+package ru.qamilord.oop;
 
 public class Main {
 
@@ -11,6 +11,7 @@ public class Main {
         Robocop robocop = new Robocop();
         robocop.setName("robo");
         robocop.setWing(aircraftWing);
+        robocop.getWing();
 
         robocop.flight();
         robocop.talk();

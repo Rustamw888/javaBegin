@@ -1,4 +1,4 @@
-package ru.javabegin.oop.robot;
+package ru.qamilord.oop;
 
 // Класс обязан реализовать все методы интерфейса, иначе компилятор будет ругаться.
 public class Terminator extends ARobot{
@@ -9,7 +9,7 @@ public class Terminator extends ARobot{
     public Terminator() {
     }
 
-    public Terminator(String name, Wing wing) {
+    public Terminator(String name, IWing wing) {
         super(name, wing);
     }
 

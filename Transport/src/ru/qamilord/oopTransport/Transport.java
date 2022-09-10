@@ -1,4 +1,4 @@
-package ru.qamilord.oop;
+package ru.qamilord.oopTransport;
 
 // класс с общим поведением для всех траспортных средств
 public class Transport{ // компилятор всегда как будто дописывает extends Object для самого верхнего объекта цепочки

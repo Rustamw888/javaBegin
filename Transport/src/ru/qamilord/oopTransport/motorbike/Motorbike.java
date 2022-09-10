@@ -1,6 +1,6 @@
-package ru.qamilord.oop.motorbike;
+package ru.qamilord.oopTransport.motorbike;
 
-import ru.qamilord.oop.Transport;
+import ru.qamilord.oopTransport.Transport;
 
 public class Motorbike extends Transport {
 
