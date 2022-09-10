@@ -1,13 +1,13 @@
 package homework;
 
-public class Computer {
+public class Computer1 {
 
   private String name;
 
-  public Computer() {
+  public Computer1() {
   }
 
-  public Computer(String name) {
+  public Computer1(String name) {
     this.name = name;
   }
 
