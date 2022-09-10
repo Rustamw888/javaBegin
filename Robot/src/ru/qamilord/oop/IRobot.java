@@ -1,11 +1,16 @@
 package ru.qamilord.oop;
 
+// вы можете во всех интерфейсах описывать как методы-свойства, так методы-свойства
 public interface IRobot {
 
-  void move();
+    // методы-действия (методы бизнес-процессов)
+    void move();
+    void stop();
+    void flight();
+    void talk();
 
-  void stop();
-
-  void fight();
+    // методы-свойства
+    String getName();
+    IWing getWing(); // обязываем по контракту всех роботов иметь крыло
 
 }
