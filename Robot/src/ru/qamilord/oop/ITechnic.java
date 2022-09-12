@@ -2,8 +2,12 @@ package ru.qamilord.oop;
 
 public interface ITechnic {
 
-  void on();
+    default void on() {
+        System.out.println("default on");
+    }
 
-  void off();
-
+    default void off(){
+        System.out.println("default off");
+        on(); // дефолтный метод может вызывать другие методы из интерфейса
+    }
 }

@@ -1,20 +1,17 @@
 package ru.qamilord.oop;
 
-public class AircraftWing implements IWing {
+public class LittleWing implements IWing{
+
 
     private int size;
 
     @Override
     public void open() {
-        System.out.println("AircraftWing open");
+        System.out.println("LittleWing open");
     }
 
     @Override
     public int getSize() {
         return size;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
     }
 }

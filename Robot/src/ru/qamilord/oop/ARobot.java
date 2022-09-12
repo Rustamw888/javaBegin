@@ -1,6 +1,6 @@
 package ru.qamilord.oop;
 
-public abstract class ARobot implements IRobot {
+public abstract class ARobot implements IRobot, ITechnic {
 
     // конструкторы в абстрактном классе нужны для инициализации свойств
     public ARobot() {
@@ -13,7 +13,7 @@ public abstract class ARobot implements IRobot {
 
     // можем выносить в абстрактный класс часть реализации интерфейса
     private String name; // эту переменную создали согласно интерфейсу
-    private IWing wing;
+    private IWing wing; // универсальная ссылка - в нее можно будет присвоить любой объект, который реализовывает IWing
 
     @Override
     public String getName() {
@@ -36,11 +36,12 @@ public abstract class ARobot implements IRobot {
 
     @Override
     public void on() {
+        System.out.println("on");
 
     }
 
-    @Override
-    public void off() {
-
-    }
+//    @Override
+//    public void off() {
+//        System.out.println("off");
+//    }
 }

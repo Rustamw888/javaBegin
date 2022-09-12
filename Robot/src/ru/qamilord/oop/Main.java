@@ -6,15 +6,15 @@ public class Main {
 
         AircraftWing aircraftWing = new AircraftWing();
         aircraftWing.setSize(200);
-        aircraftWing.open();
+
+        LittleWing littleWing = new LittleWing();
+        aircraftWing.setSize(10);
 
         Robocop robocop = new Robocop();
         robocop.setName("robo");
-        robocop.setWing(aircraftWing);
-        robocop.getWing();
+        robocop.setWing(littleWing);
 
         robocop.flight();
-        robocop.talk();
 
 
     }

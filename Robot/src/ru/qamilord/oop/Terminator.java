@@ -13,10 +13,10 @@ public class Terminator extends ARobot{
         super(name, wing);
     }
 
-    @Override // указание компилятору, что мы хотим реализовать метод интерфейса
-    public void move() {
-        System.out.println("terminator move");
-    }
+//    @Override // указание компилятору, что мы хотим реализовать метод интерфейса
+//    public void move() {
+//        System.out.println("terminator move");
+//    }
 
     @Override
     public void stop() {
