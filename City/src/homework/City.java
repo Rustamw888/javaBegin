@@ -44,7 +44,7 @@ public class City implements ICity {
       for (IFlat flat : house.getFlatList()) {
         System.out.println("- Квартира: " + flat.getNumber());
         if (!flat.getSettlerList().isEmpty()) {
-          if (flat.getSettlerList().size() > 3) {
+          if (flat.getSettlerList().size() >= 3) {
             System.out.println("--В одну квартиру можно заселить не более 2-х человек");
           } else {
             for (Settler settler : flat.getSettlerList()) {
