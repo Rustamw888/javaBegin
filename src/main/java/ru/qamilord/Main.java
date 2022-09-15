@@ -1,6 +1,6 @@
-package homework;
+package ru.qamilord;
 
-public class MainComputer_2 {
+public class Main {
 
   public static void main(String[] args) {
 

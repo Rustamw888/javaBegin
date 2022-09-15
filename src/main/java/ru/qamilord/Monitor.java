@@ -1,4 +1,4 @@
-package homework;
+package ru.qamilord;
 
 public class Monitor implements IMonitor{
 
