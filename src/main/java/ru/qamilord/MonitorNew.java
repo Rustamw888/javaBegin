@@ -2,18 +2,17 @@ package ru.qamilord;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Alternative;
-import jakarta.enterprise.inject.Default;
 
 @ApplicationScoped
-@Alternative
-public class Monitor implements IMonitor{
 
-  private String monitorName;
+public class MonitorNew implements IMonitor{
 
-  public Monitor() {
+  private String monitorName = "new";
+
+  public MonitorNew() {
   }
 
-  public Monitor(String monitorName) {
+  public MonitorNew(String monitorName) {
     this.monitorName = monitorName;
   }
 

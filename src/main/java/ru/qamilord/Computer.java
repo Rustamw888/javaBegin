@@ -1,9 +1,14 @@
 package ru.qamilord;
 
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+
+@ApplicationScoped
 public class Computer implements IComputer {
 
   private String computerName;
 
+  @Inject
   private IMonitor monitor;
 
   public Computer() {
