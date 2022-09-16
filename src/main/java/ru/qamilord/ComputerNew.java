@@ -1,5 +1,6 @@
 package ru.qamilord;
 
+
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
@@ -7,60 +8,60 @@ import jakarta.inject.Named;
 @ApplicationScoped
 public class ComputerNew implements IComputer {
 
-  private String computerName;
+    private String name;
+    private IMouse mouse;
 
-  private IMouse mouse;
+    private IMonitor monitor; // в эту переменную будет подставлен конкретный объект (это может быть неизвестно самой переменной)
 
-  //  @Inject
-//  @Named("mono2")
-  private IMonitor monitor;
+    public ComputerNew(String name) {
+        this.name = name;
+    }
 
-  //
-//  public ComputerNew() {
-//  }
-//
-  @Inject
-  public ComputerNew(IMouse mouse, @Named("monitor") IMonitor monitor) {
-    this.mouse = mouse;
-    this.monitor = monitor;
-  }
+    public ComputerNew() {
+    }
 
-  @Override
-  public IMouse getMouse() {
-    return mouse;
-  }
+    @Inject
+    public ComputerNew(IMouse mouse, IMonitor monitor) {
+        this.mouse = mouse;
+        this.monitor = monitor;
+    }
 
-  public void setMouse(IMouse mouse) {
-    this.mouse = mouse;
-  }
+    @Override
+    public String getComputerName() {
+        return name;
+    }
 
-  @Override
-  public IMonitor getMonitor() {
-    return monitor;
-  }
+    @Override
+    public IMonitor getMonitor() {
+        return monitor;
+    }
 
-  public void setMonitor(IMonitor monitor) {
-    this.monitor = monitor;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  @Override
-  public String getComputerName() {
-    return computerName;
-  }
+    public void setMonitor(IMonitor monitor) {
+        this.monitor = monitor;
+    }
 
-  public void setComputerName(String computerName) {
-    this.computerName = computerName;
-  }
+    @Override
+    public IMouse getMouse() {
+        return mouse;
+    }
 
-  @Override
-  public void on() {
-    System.out.println("Компьютер включился " + computerName + ", используется монитор "
-        + monitor.getMonitorName());
-  }
+    public void setMouse(IMouse mouse) {
+        this.mouse = mouse;
+    }
 
-  @Override
-  public void off() {
-    System.out.println("Компьютер выключился " + computerName + ", используется монитор "
-        + monitor.getMonitorName());
-  }
+    @Override
+    public void on() {
+        System.out.println("Компьютер включился " + name + ", используется монитор " + monitor.getMonitorName());
+    }
+
+    @Override
+    public void off() {
+        System.out.println("Компьютер выключился " + name + ", используется монитор " + monitor.getMonitorName());
+    }
+
+
 }

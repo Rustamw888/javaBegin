@@ -1,29 +1,21 @@
 package ru.qamilord;
 
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.enterprise.inject.Alternative;
-import jakarta.enterprise.inject.Default;
-import jakarta.inject.Named;
-
-@Named
-@ApplicationScoped
 public class Monitor implements IMonitor{
+    private String name = "monitor";
 
-  private String monitorName = "monitor";
+    public Monitor(String name) {
+        this.name = name;
+    }
 
-  public Monitor() {
-  }
+    public Monitor() {
+    }
 
-  public Monitor(String monitorName) {
-    this.monitorName = monitorName;
-  }
+    @Override
+    public String getMonitorName() {
+        return name;
+    }
 
-  @Override
-  public String getMonitorName() {
-    return monitorName;
-  }
-
-  public void setMonitorName(String monitorName) {
-    this.monitorName = monitorName;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 }

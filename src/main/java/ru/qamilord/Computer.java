@@ -25,7 +25,7 @@ public class Computer implements IComputer {
   }
 
   @Inject
-  public Computer(IMouse mouse, @Named("monitor") IMonitor monitor) {
+  public Computer(IMouse mouse, IMonitor monitor) {
     this.mouse = mouse;
     this.monitor = monitor;
   }
@@ -44,8 +44,7 @@ public class Computer implements IComputer {
     this.mouse = mouse;
   }
 
-  @Inject
-  public void setMonitor(@Named("monitorNew") IMonitor monitor) {
+  public void setMonitor(IMonitor monitor) {
     this.monitor = monitor;
   }
 
