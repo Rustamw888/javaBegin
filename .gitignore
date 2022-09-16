@@ -60,6 +60,7 @@ out/
 *.txt
 *.bin
 *.lock
+*.properties
 # mpeltonen/sbt-idea plugin
 .idea_modules/
 
