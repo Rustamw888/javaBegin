@@ -1,10 +1,10 @@
 package ru.qamilord;
 
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
-import jakarta.inject.Named;
+import lombok.Getter;
+import lombok.Setter;
 
-@ApplicationScoped
+@Getter
+@Setter
 public class Car implements ICar {
 
   private String name;
@@ -12,19 +12,10 @@ public class Car implements ICar {
   public Car() {
   }
 
-
   public Car(String name) {
     this.name = name;
   }
 
-  @Override
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
 
   @Override
   public void drive() {

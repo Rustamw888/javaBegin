@@ -9,13 +9,7 @@ repositories {
     mavenCentral()
 }
 
-task copyResources(type: Copy) {
-    from "${projectDir}/src/main/resources/META-INF"
-    into "${buildDir}/classes/java/main/META-INF"
-}
-
-processResources.dependsOn copyResources
-
 dependencies {
-    implementation 'org.jboss.weld.se:weld-se-core:5.0.1.Final'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
 }
