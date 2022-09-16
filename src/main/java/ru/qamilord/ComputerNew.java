@@ -5,34 +5,24 @@ import jakarta.inject.Inject;
 import jakarta.inject.Named;
 
 @ApplicationScoped
-public class Computer implements IComputer {
+public class ComputerNew implements IComputer {
 
   private String computerName;
 
-
-  private IMonitor monitor;
   private IMouse mouse;
 
-  public Computer() {
-  }
+  //  @Inject
+//  @Named("mono2")
+  private IMonitor monitor;
 
-  public Computer(IMouse mouse) {
-    this.mouse = mouse;
-  }
-
-  public Computer(String computerName) {
-    this.computerName = computerName;
-  }
-
+  //
+//  public ComputerNew() {
+//  }
+//
   @Inject
-  public Computer(IMouse mouse, @Named("monitor") IMonitor monitor) {
+  public ComputerNew(IMouse mouse, @Named("monitor") IMonitor monitor) {
     this.mouse = mouse;
     this.monitor = monitor;
-  }
-
-  @Override
-  public IMonitor getMonitor() {
-    return monitor;
   }
 
   @Override
@@ -44,8 +34,12 @@ public class Computer implements IComputer {
     this.mouse = mouse;
   }
 
-  @Inject
-  public void setMonitor(@Named("monitorNew") IMonitor monitor) {
+  @Override
+  public IMonitor getMonitor() {
+    return monitor;
+  }
+
+  public void setMonitor(IMonitor monitor) {
     this.monitor = monitor;
   }
 

@@ -3,12 +3,13 @@ package ru.qamilord;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Alternative;
 import jakarta.enterprise.inject.Default;
+import jakarta.inject.Named;
 
+@Named
 @ApplicationScoped
-@Alternative
 public class Monitor implements IMonitor{
 
-  private String monitorName;
+  private String monitorName = "monitor";
 
   public Monitor() {
   }
