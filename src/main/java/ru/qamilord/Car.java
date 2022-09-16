@@ -1,6 +1,8 @@
 package ru.qamilord;
 
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
 @ApplicationScoped
 public class Car implements ICar {
@@ -9,6 +11,7 @@ public class Car implements ICar {
 
   public Car() {
   }
+
 
   public Car(String name) {
     this.name = name;
