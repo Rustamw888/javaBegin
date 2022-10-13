@@ -20,7 +20,7 @@ public class MainCity {
     Settler settler14 = new Settler("settler14");
     Settler settler15 = new Settler("settler15");
 
-    Flat flat1 = new Flat(1);
+    IFlat flat1 = new Flat(1);
     flat1.addSettler(settler1);
     flat1.addSettler(settler2);
     Flat flat2 = new Flat(2);
