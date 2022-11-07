@@ -1,6 +1,4 @@
-package ru.qamilord.oopCity;
-
-import java.util.ArrayList;
+package ru.qamilord.oopShop;
 
 /*
 
@@ -45,64 +43,26 @@ import java.util.ArrayList;
 
  **/
 
-public class City implements ICity {
 
-  private String cityName;
+import java.util.List;
+import ru.qamilord.oopShop.interfaces.ISeller;
 
-  private ArrayList<IHouse> houseList = new ArrayList<>();
+public class ShopMain {
 
-  public City() {
+  public static void main(String[] args) {
+
+    Shop shop = new Shop();
+    ISeller seller = new Seller("Ерла");
+    List<Product> product = List.of(
+            new Product("Кумыс", 120, 11),
+            new Product("Казы", 500, 5),
+            new Product("Яйца", 80, 80),
+            new Product("Хлеб", 50, 25),
+            new Product("Чай", 350, 19),
+            new Product("Молоко", 60, 38));
+    Customer customer1 = new Customer("Сакен");
+    shop.setProduct(product);
+    seller.salesProcessing(shop, 10, customer1);
   }
 
-  public City(String cityName, ArrayList<IHouse> houseList) {
-    this.cityName = cityName;
-    this.houseList = houseList;
-  }
-
-  @Override
-  public String getCityName() {
-    return cityName;
-  }
-
-  public void setCityName(String cityName) {
-    this.cityName = cityName;
-  }
-
-  @Override
-  public ArrayList<IHouse> getHouseList() {
-    return houseList;
-  }
-
-  public void setHouseList(ArrayList<IHouse> houseList) {
-    this.houseList = houseList;
-  }
-
-  @Override
-  public void showSettledList() {
-
-    System.out.println("Город: " + cityName);
-
-    for (IHouse house : houseList) {
-      System.out.println("Дом: " + house.getAddress());
-      for (IFlat flat : house.getFlatList()) {
-        System.out.println("- Квартира: " + flat.getNumber());
-        if (!flat.getSettlerList().isEmpty()) {
-          if (flat.getSettlerList().size() >= 3) {
-            System.out.println("--В одну квартиру можно заселить не более 2-х человек");
-          } else {
-            for (Settler settler : flat.getSettlerList()) {
-              System.out.println("-- Житель: " + settler.getName());
-            }
-          }
-        } else {
-          System.out.println("--Никто не живет");
-        }
-      }
-    }
-  }
-
-  @Override
-  public void addHouse(IHouse house) {
-    houseList.add(house);
-  }
 }
