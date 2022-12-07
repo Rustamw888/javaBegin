@@ -58,6 +58,9 @@ out/
 .idea/
 .allure/
 *.txt
+*.lock
+*.bin
+*.properties
 # mpeltonen/sbt-idea plugin
 .idea_modules/
 

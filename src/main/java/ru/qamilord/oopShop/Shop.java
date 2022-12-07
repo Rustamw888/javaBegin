@@ -15,6 +15,6 @@ import ru.qamilord.oopShop.interfaces.IShop;
 public class Shop implements IShop {
 
   private ISeller seller;
-  private List<Product> product;
+  private List<Product> productList;
   private int cashBox;
 }

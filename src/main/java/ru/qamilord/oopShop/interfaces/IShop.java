@@ -6,6 +6,6 @@ import ru.qamilord.oopShop.Product;
 public interface IShop {
 
   ISeller getSeller();
-  List<Product> getProduct();
+  List<Product> getProductList();
   int getCashBox();
 }

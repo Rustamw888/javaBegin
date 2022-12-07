@@ -1,11 +1,13 @@
 package ru.qamilord.oopShop;
 
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import ru.qamilord.oopShop.interfaces.ISeller;
-import ru.qamilord.oopShop.interfaces.IShop;
+
+
 
 @Getter
 @Setter
@@ -15,28 +17,30 @@ public class Seller implements ISeller {
 
   private String name;
 
+  // у покупателя добавляется товары
+  // у магазина отменяется
+  // нельзя купить товар, который закончился
+
   @Override
-  public void salesProcessing(IShop shop, int preferredQuantity, Customer customer) {
-    int productCount = shop.getProduct().size();
-    int remainingProduct = productCount - preferredQuantity;
-    int customersMoney = customer.getWallet();
-    int shopMoney = shop.getCashBox();
-    if (productCount == 0) {
-      System.out.println("Товара нет в наличии!");
-    } else if (productCount >= 0) {
-      for (Product product : shop.getProduct()) {
-        customersMoney = customersMoney - product.getPrice();
-        shopMoney = shopMoney + product.getPrice();
-        System.out.println(String.format("Товар продан в количестве %d штук", preferredQuantity));
-        System.out.println(String.format("Осталось товара: %d", -remainingProduct));
-      }
-    } else {
-      for (Product product : shop.getProduct()) {
-        System.out.println(
-            String.format("Количества товара [%s] не достаточно, для покупки в полном объёме "
-                + "необходимо оформить заявку со склада ещё на [%d] штук!", product, -productCount));
-      }
+  public void sale(Shop shop, Product product, Customer customer, int index) {
+
+    if (product.getName().isEmpty()) {
+      System.out.println("Товар закончился");
+      return;
     }
+    int total = customer.getWallet() - product.getPrice();
+    if (total < 0) {
+      System.out.println("Не может купить");
+      return;
+    }
+    customer.setWallet(total);
+    System.out.println(customer.getWallet());
+
+    customer.setCustomerProductList(List.of(product));
+    shop.getProductList().remove(index);
+
+    System.out.println("Это новый продуктовый список покупателя: " + customer.getCustomerProductList().size());
+    System.out.println("Это новый продуктовый список в магазине: " + shop.getProductList().size());
   }
 
 }

@@ -44,7 +44,9 @@ package ru.qamilord.oopShop;
  **/
 
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import ru.qamilord.oopShop.interfaces.ISeller;
 
 public class ShopMain {
@@ -53,16 +55,24 @@ public class ShopMain {
 
     Shop shop = new Shop();
     ISeller seller = new Seller("Ерла");
-    List<Product> product = List.of(
-            new Product("Кумыс", 120, 11),
-            new Product("Казы", 500, 5),
-            new Product("Яйца", 80, 80),
-            new Product("Хлеб", 50, 25),
-            new Product("Чай", 350, 19),
-            new Product("Молоко", 60, 38));
-    Customer customer1 = new Customer("Сакен");
-    shop.setProduct(product);
-    seller.salesProcessing(shop, 10, customer1);
+    Customer customer1 = new Customer("Сакен", 100, null);
+
+    Scanner scanner = new Scanner(System.in);
+    int index = scanner.nextInt();
+
+    List<Product> productList = new ArrayList<>(List.of(
+        new Product("Кумыс", 120),
+        new Product("Казы", 50),
+        new Product("Яйца", 80),
+        new Product("Хлеб", 50),
+        new Product("Чай", 350),
+        new Product("Молоко", 60)));
+
+    shop.setProductList(productList);
+
+    shop.setSeller(seller);
+
+    seller.sale(shop, shop.getProductList().get(index), customer1, index);
   }
 
 }

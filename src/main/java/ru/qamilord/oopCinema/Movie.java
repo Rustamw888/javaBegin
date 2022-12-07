@@ -1,6 +1,5 @@
-package ru.qamilord.oopShop;
+package ru.qamilord.oopCinema;
 
-import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,10 +9,9 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Customer {
+public class Movie {
 
   private String name;
-  private int wallet;
-  private List<Product> customerProductList;
+  private int price;
 
 }

@@ -1,19 +1,18 @@
-package ru.qamilord.oopShop;
+package ru.qamilord.oopCinema;
 
-import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import ru.qamilord.oopCinema.interfaces.ISession;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Customer {
+public class Session implements ISession {
 
-  private String name;
-  private int wallet;
-  private List<Product> customerProductList;
+  private Movie movie;
+  private int time;
 
 }
